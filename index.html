@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta>
+        <title>match the boxes</title>
+        <link rel="stylesheet" href="style.css">
+       
+    </head>
+    <body>
+        <section>
+            <h1 id="heading">Match the Pattern</h1>
+            <div class="game-controls">
+                <select id="difficulty">
+                    <option value="easy">Easy (60 seconds)</option>
+                    <option value="medium">Medium (45 seconds)</option>
+                    <option value="hard">Hard (30 seconds)</option>
+                </select>
+                <button id="start-game">Start Game</button>
+            </div>
+            <div class="game-info">
+                <h2>Score: <span id="score">0</span></h2>
+                <h2>Time Left: <span id="timer">60</span>s</h2>
+                <h2>Target Sum: <span id="target-number">-</span></h2>
+                <p>Select three numbers that add up to the target!</p>
+            </div>
+            <hr>
+        </section>
+       <table id="table">
+        <tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
+        <tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
+        <tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
+        <tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
+       </table> 
+       <h1 id="clack"></h1> 
+        <script src="script.js"></script>
+    </body>
+</html>
