@@ -40,11 +40,14 @@ body {
         width: 100%;
         padding: 20px;
         min-height: auto;
+        border-radius: 0 0 24px 24px;
     }
 
     .main-content {
         width: 100%;
         padding: 10px;
+        justify-content: center;
+        align-items: flex-start;
     }
 
     h1#heading {
@@ -63,6 +66,15 @@ body {
     .game-info h2 {
         font-size: 18px;
         margin: 5px 0;
+    }
+
+    #refresh-game {
+        position: fixed;
+        left: 50%;
+        bottom: 32px;
+        transform: translateX(-50%);
+        margin: 0;
+        z-index: 1000;
     }
 }
 
