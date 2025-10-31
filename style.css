@@ -2,21 +2,44 @@ body {
     font-family: Arial, sans-serif;
     background-color: #1a1a1a;
     color: #fff;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 50%;
+    background-color: #2ecc71;
+    color: white;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
+}
+
+.main-content {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
 .game-controls {
     margin: 20px 0;
     text-align: center;
+    width: 100%;
 }
 
 .game-info {
     text-align: center;
     margin: 20px 0;
+    width: 100%;
 }
 
 #table {
@@ -72,6 +95,68 @@ button:hover, select:hover {
     background-color: #357abd;
 }
 
+.game-board-container {
+    position: relative;
+    display: inline-block;
+    margin: 20px auto;
+}
+
+#refresh-game {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #4CAF50;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#refresh-game:hover {
+    background-color: #45a049;
+    transform: translateY(-50%) scale(1.1);
+}
+
+#refresh-game .refresh-icon {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+/* Mobile optimization for refresh button */
+@media (max-width: 600px) {
+    .game-board-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #refresh-game {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+    }
+
+    #refresh-game:hover {
+        transform: scale(1.1);
+    }
+}
+
+.refresh-icon {
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+#refresh-game:active .refresh-icon {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
 #target-number {
     color: #4CAF50;
     font-size: 1.2em;
@@ -81,4 +166,22 @@ button:hover, select:hover {
 #score, #timer {
     color: #4a90e2;
     font-weight: bold;
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    td:hover {
+        background-color: inherit;
+    }
+    
+    button:active, select:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Prevent zoom on mobile when tapping inputs */
+@media (max-width: 480px) {
+    select, button {
+        font-size: 16px;
+    }
 }

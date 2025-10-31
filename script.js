@@ -22,10 +22,13 @@ function generateNumber() {
 
 // Fill table with random numbers and ensure there's a valid solution
 function fillTable() {
-    const cells = document.querySelectorAll('.cell');
+    // Clear all highlights first
+    clearAllHighlights();
+    
+    const cells = document.querySelectorAll('#table td');
     const cellsArray = Array.from(cells);
     
-    // First fill with random numbers
+    // Fill with random numbers
     cellsArray.forEach(cell => {
         cell.textContent = generateNumber();
     });
@@ -56,7 +59,16 @@ function setNewTarget() {
     document.getElementById('target-number').textContent = gameState.targetNumber;
 }
 
-// Set a new target number
+// Clear all highlights from the table
+function clearAllHighlights() {
+    document.querySelectorAll('#table td').forEach(cell => {
+        cell.classList.remove('selected', 'match-flicker');
+        cell.style.backgroundColor = '';
+    });
+    gameState.selectedCells = [];
+}
+
+// Set new target number
 function setNewTarget() {
     gameState.targetNumber = Math.floor(Math.random() * 200) + 100;
     document.getElementById('target-number').textContent = gameState.targetNumber;
@@ -327,7 +339,8 @@ document.getElementById('start-game').addEventListener('click', function() {
     }, 1000);
 });
 
-}); // Close DOMContentLoaded event listener
+});
+ // Close DOMContentLoaded event listener
 //  function highlight(td){
 //          if(selectedTd){
 //         selectedTd.classList.remove('highlight');

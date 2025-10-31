@@ -1,36 +1,45 @@
-<html>
+<html lang="en">
     <head>
-        <meta>
-        <title>match the boxes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Number Matching Game</title>
         <link rel="stylesheet" href="style.css">
        
     </head>
-    <body>
-        <section>
-            <h1 id="heading">Match the Pattern</h1>
-            <div class="game-controls">
-                <select id="difficulty">
-                    <option value="easy">Easy (60 seconds)</option>
-                    <option value="medium">Medium (45 seconds)</option>
-                    <option value="hard">Hard (30 seconds)</option>
-                </select>
-                <button id="start-game">Start Game</button>
+    <body class="no-select">
+        <div class="container">
+            <div class="sidebar">
+                <h1 id="heading">Number Match</h1>
+                <div class="game-controls">
+                    <select id="difficulty" class="control-item">
+                        <option value="easy">Easy (60s)</option>
+                        <option value="medium">Medium (45s)</option>
+                        <option value="hard">Hard (30s)</option>
+                    </select>
+                    <button id="start-game" class="control-item">Start Game</button>
+                </div>
+                <div class="game-info">
+                    <h2>Score: <span id="score">0</span></h2>
+                    <h2>Time: <span id="timer">60</span>s</h2>
+                    <h2>Target: <span id="target-number">-</span></h2>
+                    <p>Find three numbers that sum to target!</p>
+                </div>
             </div>
-            <div class="game-info">
-                <h2>Score: <span id="score">0</span></h2>
-                <h2>Time Left: <span id="timer">60</span>s</h2>
-                <h2>Target Sum: <span id="target-number">-</span></h2>
-                <p>Select three numbers that add up to the target!</p>
+            <div class="main-content">
+                <div class="game-board-container">
+           <table id="table">
+            <tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
+            <tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
+            <tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
+            <tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
+           </table>
+           <button id="refresh-game" class="control-item">
+               <span class="refresh-icon">↻</span>
+           </button>
+                </div>
             </div>
-            <hr>
-        </section>
-       <table id="table">
-        <tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
-        <tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
-        <tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
-        <tr><td class="cell"></td><td class="cell"></td><td class="cell"></td><td class="cell"></td></tr>
-       </table> 
-       <h1 id="clack"></h1> 
+        </div>
+        <h1 id="clack"></h1>
         <script src="script.js"></script>
     </body>
 </html>
