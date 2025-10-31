@@ -30,6 +30,42 @@ body {
     padding: 20px;
 }
 
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1#heading {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .game-controls {
+        margin: 10px 0;
+    }
+
+    .game-info {
+        margin: 10px 0;
+    }
+
+    .game-info h2 {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+}
+
 .game-controls {
     margin: 20px 0;
     text-align: center;
@@ -57,6 +93,20 @@ body {
     cursor: pointer;
     color: #fff;
     transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .cell {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        border-width: 1px;
+    }
+    
+    .game-board-container {
+        position: relative;
+        margin: 10px auto;
+    }
 }
 
 .cell:hover {
@@ -91,6 +141,16 @@ button, select {
     border-radius: 5px;
 }
 
+@media screen and (max-width: 768px) {
+    button, select {
+        padding: 8px 16px;
+        font-size: 14px;
+        margin: 5px;
+        width: 80%;
+        max-width: 200px;
+    }
+}
+
 button:hover, select:hover {
     background-color: #357abd;
 }
@@ -115,6 +175,14 @@ button:hover, select:hover {
     justify-content: center;
     padding: 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width: 768px) {
+    #refresh-game {
+        position: static;
+        transform: none;
+        margin: 20px auto 0;
+    }
 }
 
 #refresh-game:hover {
